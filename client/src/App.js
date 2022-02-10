@@ -1,8 +1,14 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import logo from './logo.svg';
+import { Counter } from './features/counter/Counter';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Tulum from './pages/Tulum';
+import PlayaDelCarmen from './pages/PlayaDelCarmen';
 
 function App() {
+
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -12,13 +18,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/tulum" element={<Tulum />} />
+        <Route path="/playadelcarmen" element={<PlayaDelCarmen />} />
+      </Routes>
+    </Router>
   );
 }
+
 
 export default App;
