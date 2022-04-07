@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import VideoPlaya from './videos/playa-clara.mp4'
 
-function Section({ title, id, description, downarrow }) {
+function Video({ title, id, description, downarrow }) {
     return (
         <Wrap id={id}>
             <video autoPlay loop muted
@@ -23,8 +23,10 @@ function Section({ title, id, description, downarrow }) {
 
             <Fade bottom>
                 <ItemText>
-                    <h1>{title}</h1>
-                    <p>{description}</p>
+                    <TextWrap>
+                        <h1>{title}</h1>
+                        <p>{description}</p>
+                    </TextWrap>
                 </ItemText>
             </Fade>
             <Fade bottom>
@@ -38,7 +40,7 @@ function Section({ title, id, description, downarrow }) {
     )
 }
 
-export default Section
+export default Video
 
 const Wrap = styled.div`
     width: 100vw;
@@ -54,35 +56,15 @@ const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
 `
+const TextWrap = styled.div`
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 25px;
+`
 const Buttons = styled.div`
 `
-const ButtonGroup = styled.div`
-    display: flex;
-    margin-bottom: 30px;
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
-`
-const LeftButton = styled.div`
-    background-color: rgba(23, 26, 32, 0.8);
-    height: 40px;
-    width: 256px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    opacity: 0.85;
-    text-transform: uppercase;
-    font-size: 12px;
-    cursor: pointer;
-    margin: 8px;
-`
-const RightButton = styled(LeftButton)`
-    background: white;
-    opacity: 0.65;
-    color: black;
-`
+
+
 const DownArrow = styled.img`
     height: 40px;
     overflow-x: hidden;

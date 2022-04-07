@@ -9,12 +9,13 @@ function Header({ idChecker }) {
 
     return (
         <Container>
-            <Link to="/">
-                <img src="/images/xuxus.png" alt="" />
-            </Link>
+            <a href="/#">
+                <img src="/images/XuxusVacationsLogo.png" alt="" />
+            </a>
             {idChecker &&
                 <Menu>
                     <a href="#tulum"> Tulum </a>
+                    <p> | </p>
                     <a href="#playadelcarmen"> Playa del Carmen</a>
                 </Menu>
             }

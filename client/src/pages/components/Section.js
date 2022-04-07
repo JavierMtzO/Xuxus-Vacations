@@ -2,19 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 
+
 function Section({ title, id, description, leftButtonTxt, rightButtonTxt, backgroundImg, downarrow, linkAirbnb }) {
     return (
         <Wrap bgImage={backgroundImg} id={id}>
             <Fade bottom>
                 <ItemText>
-                    <h1>{title}</h1>
-                    <p>{description}</p>
+                    <TextWrap>
+                        <h1>{title}</h1>
+                        <p>{description}</p>
+                    </TextWrap>
                 </ItemText>
             </Fade>
             <Fade bottom>
                 <Buttons>
                     <ButtonGroup>
-                        <a href={linkAirbnb} target="_blank">
+                        <a href={linkAirbnb} target="_blank" rel="noreferrer">
                             <LeftButton>
                                 {leftButtonTxt}
                             </LeftButton>
@@ -54,6 +57,11 @@ const Wrap = styled.div`
 const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
+`
+const TextWrap = styled.div`
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 25px;
 `
 const Buttons = styled.div`
     display: flex;
